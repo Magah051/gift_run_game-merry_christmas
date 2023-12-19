@@ -33,3 +33,23 @@ move_drop = false;
 
 play_sounds = true;
 play_music = false;
+
+// Classe de vetor 2D (muito básica)
+// Usada para posições e movimento.
+function Vec2(x, y) {
+    this.x = x;
+    this.y = y;
+
+    this.add = function(other) {
+        this.x += other.x;
+        this.y += other.y;
+    };
+
+    this.copy = function() {
+        return new Vec2(this.x, this.y);
+    };
+}
+
+function vec(x, y) {
+    return new Vec2(x, y);
+}
