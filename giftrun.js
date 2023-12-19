@@ -155,3 +155,25 @@ function load_data(onload) {
 }
 
 whistle_sound = null;
+
+function play_sound(name) {
+    if(play_sounds) {
+        // Parar o som do apito se estiver tocando
+        if(whistle_sound) {
+            whistle_sound.pause();
+            delete whistle_sound;
+            whistle_sound = null;
+        }
+
+        if(sounds[name]) {
+            var url = sounds[name].src;
+            var a = new Audio(url);
+            a.load();
+            a.play();
+
+            if(name == 'whistle') {
+                whistle_sound = a;
+            }
+        }
+    }
+}
