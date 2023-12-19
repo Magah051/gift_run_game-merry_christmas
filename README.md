@@ -27,4 +27,6 @@ Espere o papai noel passar no ponto da chaminé e use a tecla 'space' para solta
 ## Interface da Aplicação
 ![ezgif-3-6b6a3a78af](https://github.com/Magah051/gift_run_game-merry_christmas/assets/31749933/b80c6cb2-1e27-47e2-bf93-e9bc4ad953cf)
 
+Artes Gráficas: <a href="https://www.linkedin.com/in/alexsandro-duart/" target='_blank'>Alexandro Duarte</a>
+
 
