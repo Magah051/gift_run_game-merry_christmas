@@ -177,3 +177,17 @@ function play_sound(name) {
         }
     }
 }
+
+frame = 1;
+deer = 0;
+
+rudolph = new Character(vec(146, 180), vec(0, 0), 'rudolph1');
+reindeer = new Character(vec(246, 180), vec(0, 0), 'reindeer1');
+santa = new Character(vec(336, 170), vec(0, 0), 'santa1');
+
+houses = [];
+snowflakes = [];
+gifts = [];
+things = [];  // Fumaça, poofs, estrelas e presentes espatifados
+
+next_house_in = 0;
