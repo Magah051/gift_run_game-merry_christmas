@@ -126,3 +126,32 @@ function Gift(pos, motion, image) {
         this.pos.add(this.motion);
     };
 }
+
+function load_data(onload) {
+    var remaining = image_names.length + sound_names.length;
+    var onload = function() {
+        remaining -= 1;
+        if(remaining == 0) {
+            onload();
+        }
+    };
+
+    for(i in image_names) {
+        var name = image_names[i];
+        var img = new Image();
+        img.onload = onload;
+        img.src = "images/" + name + ".png";
+        images[name] = img;
+    }
+
+    for(i in sound_names) {
+        var name = sound_names[i];
+        var snd = new Audio();
+        snd.onload = onload;
+        snd.src = "sounds/" + name + ".wav";
+        snd.load();
+        sounds[name] = snd;
+    }
+}
+
+whistle_sound = null;
