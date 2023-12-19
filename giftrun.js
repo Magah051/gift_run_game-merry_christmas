@@ -421,3 +421,48 @@ function animate() {
         things[i].draw();
     }
 }
+
+function keyhandler(event) {
+    var value;
+
+    if(event.type == "keydown") {
+        value = true;
+    } else {
+        value = false;
+    }
+
+    switch(event.keyCode) {
+        case 38:
+            move_up = value;
+            break;
+        case 40:
+            move_down = value;
+            break;
+        case 37:
+            move_left = value;
+            break;
+        case 39:
+            move_right = value;
+            break;
+        case 32:
+            move_drop = value;
+            break;
+    }
+}
+
+function init() {
+    canvas = document.getElementById("canvas");
+    ctx = canvas.getContext("2d");
+
+    canvas.width = 720;
+
+    document.addEventListener('keydown', keyhandler, false);
+    document.addEventListener('keyup', keyhandler, false);
+
+    WIDTH = canvas.width;
+    HEIGHT = canvas.height;
+
+    load_data(onload = animate);
+}
+
+init();
