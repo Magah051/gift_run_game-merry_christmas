@@ -5,9 +5,36 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
+        <style>
+            #audioPlayer {
+                display: none;
+            }
+        </style>
+
         <canvas id="canvas" width="640" height="480"
         onkeydown="onkeydown()" onkeyup="onkeyup()">
         </canvas>
+        <audio id="audioPlayer" controls>
+            <source src="sounds/backsound.mp3" controls autoplay type="audio/mpeg">
+        </audio>
+          
+        <script>
+            var audio = document.getElementById('audioPlayer');
+            var body = document.body;
+          
+            function playAudioOnFirstInteraction() {
+              audio.play().catch(function(error) {
+                console.log("Autoplay foi bloqueado ou não suportado: ", error);
+              });
+          
+              body.removeEventListener('click', playAudioOnFirstInteraction);
+              window.removeEventListener('keydown', playAudioOnFirstInteraction);
+            }
+          
+              body.addEventListener('click', playAudioOnFirstInteraction);
+            window.addEventListener('keydown', playAudioOnFirstInteraction);
+        </script>
+
         <script src="giftrun.js"></script>
     </body>
 </html>
