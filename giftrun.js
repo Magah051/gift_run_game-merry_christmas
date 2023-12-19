@@ -100,3 +100,29 @@ function House(pos, motion, image) {
     this.superClass(pos, motion, image);
     this.smoking = (randint(4) == 0);  // 1 em 4 casas solta fumaça
 }
+
+// Rena ou Papai Noel
+function Character(pos, motion, image) {
+    this.superClass = Sprite;
+    this.superClass(pos, motion, image);
+
+    this.move = function(speed) {
+        // Personagens não se movem dessa forma
+    };
+}
+
+function Santa(pos, motion, image) {
+    this.superClass = Sprite;
+    this.superClass(pos, motion, image);
+}
+
+function Gift(pos, motion, image) {
+    this.superClass = Sprite;
+    this.superClass(pos, motion, image);
+
+    this.move = function(speed) {
+        this.motion.y += 0.5;
+        this.pos.x += speed;
+        this.pos.add(this.motion);
+    };
+}
